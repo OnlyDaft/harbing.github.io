@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Harbing</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poetsen One', sans-serif; 
+      background-color: black; 
+      color: transparent; 
+    }
+
+    .video-background {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      background-size: cover;
+      transition: opacity 0.5s ease;
+      opacity: 0.5; 
+    }
+
+    .container {
+      text-align: center;
+      margin: 0 auto; 
+      padding: 50px; 
+      position: relative; 
+      z-index: 1; /
+      user-select: none; 
+    }
+
+    .poem {
+      margin-top: 50px; 
+      font-size: 40px; 
+      line-height: 5; 
+      background-image: linear-gradient(90deg, white, red); 
+      background-size: 200% 100%; 
+      animation: gradientAnimation 3s linear infinite; 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+    }
+
+    img {
+      width: 30%; 
+      height: auto;
+    }
+
+    .for-harbing {
+      font-family: 'Poetsen One', sans-serif;
+      font-size: 80px;
+      background-image: linear-gradient(90deg, white, red);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 20px;
+      animation: fadeLetters 3s forwards, gradientAnimation 3s linear infinite; 
+
+    @keyframes fadeLetters {
+      0% {
+        opacity: 0; /* Start with transparent */
+      }
+      100% {
+        opacity: 1; /* Fade in fully */
+      }
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay>
+    <source src="https://cdn.discordapp.com/attachments/1197662762076213268/1239281562441486447/y2mate.com_-_lildeath_moment_sped_up.mp3?ex=66425a65&is=664108e5&hm=41ac756edb3194c0062e5e9f151caa48ed177162714cab69b48014b235f982ed" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <video autoplay loop muted class="video-background">
+    <source src="https://cdn.discordapp.com/attachments/1197662762076213268/1239254675757338665/hearts.mp4?ex=6642415a&is=6640efda&hm=235e8411e0f8b2120479de011ff582d8500a503d6619a9b95dbb618875e75fa6&" type="video/mp4">
+   
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <p class="for-harbing">For Harbing... &lt;3</p>
+    <img src="https://cdn.discordapp.com/attachments/1197662762076213268/1239252655172485180/harbingpook.gif?ex=66423f79&is=6640edf9&hm=999a19d05bc8b12ff9a8e91b0df133c7f2fe34e4e48375b4897828f0d7f11c9d&" alt="Harbing Image">
+    <p class="poem">My Pookie Wookie Bear Harbing<br>
+    A smile that warms the sunlit day,<br>
+    A laugh that chases clouds away.<br>
+    Your eyes, a depth where stars reside,<br>
+    A gentle heart, in you I confide.<br><br>
+    My pookie wookie bear, so strong and true,<br>
+    There's magic in the things you do.<br>
+    Your touch, a comfort warm and deep,<br>
+    With you, my love, forever I'll keep.</p>
+  </div>
+
+</body>
+</html>

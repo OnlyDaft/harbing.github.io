@@ -13,6 +13,7 @@
       font-family: 'Poetsen One', sans-serif; 
       background-color: black; 
       color: transparent; 
+      overflow: hidden; /* Hide overflow content */
     }
 
     .video-background {
@@ -34,7 +35,7 @@
       margin: 0 auto; 
       padding: 50px; 
       position: relative; 
-      z-index: 1; /
+      z-index: 1; 
       user-select: none; 
     }
 
@@ -63,6 +64,7 @@
       -webkit-text-fill-color: transparent;
       margin-top: 20px;
       animation: fadeLetters 3s forwards, gradientAnimation 3s linear infinite; 
+    }
 
     @keyframes fadeLetters {
       0% {
@@ -84,18 +86,46 @@
         background-position: 0% 50%;
       }
     }
+
+    /* Style for the audio button and overlay */
+    .audio-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9); /* White overlay with opacity */
+      z-index: 2; /* Place overlay above blurred content */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .audio-button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    /* On hover */
+    .audio-button:hover {
+      background-color: #45a049;
+    }
+
   </style>
 </head>
 <body>
 
-  <audio autoplay>
-    <source src="https://cdn.discordapp.com/attachments/1197662762076213268/1239281562441486447/y2mate.com_-_lildeath_moment_sped_up.mp3?ex=66425a65&is=664108e5&hm=41ac756edb3194c0062e5e9f151caa48ed177162714cab69b48014b235f982ed" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-
   <video autoplay loop muted class="video-background">
     <source src="https://cdn.discordapp.com/attachments/1197662762076213268/1239254675757338665/hearts.mp4?ex=6642415a&is=6640efda&hm=235e8411e0f8b2120479de011ff582d8500a503d6619a9b95dbb618875e75fa6&" type="video/mp4">
-   
     Your browser does not support the video tag.
   </video>
 
@@ -106,12 +136,25 @@
     A smile that warms the sunlit day,<br>
     A laugh that chases clouds away.<br>
     Your eyes, a depth where stars reside,<br>
-    A gentle heart, in you I confide.<br><br>
+    A gentle heart, in you I confide.<br>
+    <div class="audio-overlay">
+      <button class="audio-button" onclick="playAudio()">Play Music</button>
+    </div>
+
     My pookie wookie bear, so strong and true,<br>
     There's magic in the things you do.<br>
     Your touch, a comfort warm and deep,<br>
     With you, my love, forever I'll keep.</p>
   </div>
+
+  <script>
+    function playAudio() {
+      var audio = new Audio('https://cdn.discordapp.com/attachments/1197662762076213268/1239281562441486447/y2mate.com_-_lildeath_moment_sped_up.mp3?ex=66425a65&is=664108e5&hm=41ac756edb3194c0062e5e9f151caa48ed177162714cab69b48014b235f982ed');
+      audio.play();
+      document.querySelector('.audio-overlay').style.display = 'none'; // Remove the overlay
+      document.body.style.filter = "none"; // Remove the blur effect
+    }
+  </script>
 
 </body>
 </html>
